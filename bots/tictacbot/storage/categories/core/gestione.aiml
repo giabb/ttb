@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+	<category>
+		<pattern>INFORMAZIONI ORDINE *</pattern>
+		<template><think><set name="id_ordine"><star /></set ></think><srai><system>./lettore_ordini.py <star /></system></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI PER L ORDINE _</pattern>
+		<template><think><set name="id_ordine"><star index="2" /></set ></think><srai><system>./lettore_ordini.py <star index="2" /></system></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI RIGUARDO L ORDINE _</pattern>
+		<template><think><set name="id_ordine"><star index="2" /></set ></think><srai><system>./lettore_ordini.py <star index="2" /></system></srai></template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="[$ANNULLA|$annulla|$Annulla]" /><regex pattern="[$MODIFICHE|$Modifiche|$modifiche]" /></pattern>
+		<template>
+			<condition name="topic">
+				<li value="*">Sembra che tu non abbia nussuna modifica in atto. Scrivi "informazioni ordine" seguito dal codice relativo all'ordine che vuoi modificare per iniziare. </li>
+				<li><think><set name="topic">*</set></think>Come desideri. Modifiche annullate.</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>$COGNOME * $NOME * $CELLULARE * $MODELLO * $COLORE $CINTURINO * $VETRINO * $INDIRIZZO * $CITTÀ * $CAP * $PREZZO * $CARTA * $CARTACENS *</pattern>
+		<template>
+		<think>
+			<set name="topic">MODIFICA</set>
+			<set name="cognome_ordine"><star index="1" /></set>	
+			<set name="nome_ordine"><star index="2" /></set>
+			<set name="cellulare_ordine"><star index="3" /></set>		
+			<set name="modello_ordine"><star index="4" /></set>
+			<set name="colore_ordine"><star index="5" /></set>		
+			<set name="vetrino_ordine"><star index="6" /></set>
+			<set name="indirizzo_ordine"><star index="7" /></set>		
+			<set name="città_ordine"><star index="8" /></set>
+			<set name="cap_ordine"><star index="9" /></set>
+			<set name="prezzo_ordine"><star index="10" /></set>
+			<set name="carta_ordine"><star index="11" /></set>
+		</think>
+		Il numero d'ordine è corretto. Il destinatario è <get name="cognome_ordine" /> <get name="nome_ordine" />, il numero di cellulare è <get name="cellulare_ordine" />. Il modello ordinato è <get name="modello_ordine" /> con cinturino di colore <get name="colore_ordine" />.
+		<condition name="vetrino_ordine">
+			<li value="si">È stato aggiunto il vetrino protettivo.</li>
+			<li>Non è stato aggiunto il vetrino protettivo.</li>
+		</condition>
+		L'indirizzo di consegna è <get name="indirizzo_ordine" />, <get name="città_ordine" />, <get name="cap_ordine" />. Il prezzo totale è di <get name="prezzo_ordine" />, pagato con carta <star index="12" />. Vuoi modificare l'ordine?
+		</template>
+	</category>
+
+<topic name="MODIFICA">
+	<category>
+		<pattern># SÌ #</pattern>
+		<template>
+			Puoi modificare: cognome, nome, numero di cellulare, modello, colore del cinturino, vetrino, indirizzo, città, cap o carta di credito. Cosa vuoi modificare?
+		</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>
+			<think><set name="topic">*</set></think>
+			Va bene. Come posso aiutarti?
+		</template>
+	</category>
+
+	<category>
+		<pattern># COGNOME #</pattern>
+		<template>Inserisci il cognome del destinatario.<think><set name="topic">COGNOMEMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># NOME #</pattern>
+		<template>Inserisci il nome del destinatario.<think><set name="topic">NOMEMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># CELLULARE #</pattern>
+		<template>Inserisci il numero di cellulare di contatto.<think><set name="topic">CELLULAREMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># NUMERO #</pattern>
+		<template><srai>CELLULARE</srai></template>
+	</category>
+
+	<category>
+		<pattern># TELEFONO #</pattern>
+		<template><srai>CELLULARE</srai></template>
+	</category>
+
+	<category>
+		<pattern># MODELLO #</pattern>
+		<template>Inserisci il modello desiderato.<think><set name="topic">MODELLOMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># COLORE #</pattern>
+		<template>Inserisci il colore desiderato del cinturino.<think><set name="topic">COLOREMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># CINTURINO #</pattern>
+		<template><srai>COLORE</srai></template>
+	</category>
+
+	<category>
+		<pattern># VETRINO #</pattern>
+		<template>Vuoi il vetrino protettivo?<think><set name="topic">VETRINOMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># INDIRIZZO #</pattern>
+		<template>Inserisci l'indirizzo di consegna, senza CAP nè città di consegna.<think><set name="topic">INDIRIZZOMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># CITTÀ #</pattern>
+		<template>Inserisci la città di consegna.<think><set name="topic">CITTÀMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># CITTA #</pattern>
+		<template><srai>CITTÀ</srai></template>
+	</category>
+
+	<category>
+		<pattern># CAP #</pattern>
+		<template>Inserisci il CAP di consegna.<think><set name="topic">CAPMOD</set></think></template>
+	</category>
+
+	<category>
+		<pattern># CARTA #</pattern>
+		<template>Inserisci il numero della carta di credito.<think><set name="topic">CARTAMOD</set></think></template>
+	</category>
+
+</topic>
+
+<topic name="COGNOMEMOD">
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			Il cognome di consegna è:
+			<set name="cognome_ordine"><formal><star /></formal></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+</topic>
+
+<topic name="NOMEMOD">
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			Il nome di consegna è:
+			<set name="nome_ordine"><formal><star /></formal></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+</topic>
+
+<topic name="CELLULAREMOD">
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			Il numero di cellulare che hai specificato è: 
+			<set name="cellulare_ordine"><formal><star /></formal></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+</topic>
+
+<topic name="MODELLOMOD">
+	<category>
+		<pattern>*</pattern>
+		<template> 
+			<think><set name="modello_ordine"><map><name>smartmap</name><star /></map></set></think>
+			<condition name="modello_ordine">
+				<li value="">Il modello richiesto non è disponibile. Scrivi un altro modello.</li>
+				<li><think><set name="prezzo_ordine"><srai>SELEZIONA SOGG <get name="modello_ordine" /> PRED prezzo</srai></set><set name="topic">MODIFICA2</set></think>Il modello richiesto è:<get name="modello_ordine" />. Il nuovo prezzo è 
+					<condition name="vetrino_ordine">
+						<li value="si"><system>expr <get name="prezzo_ordine" /> + 20</system>€</li>
+						<li value="sì"><system>expr <get name="prezzo_ordine" /> + 20</system>€</li>
+						<li value=" si "><system>expr <get name="prezzo_ordine" /> + 20</system>€</li>
+						<li value=" sì "><system>expr <get name="prezzo_ordine" /> + 20</system>€</li>
+						<li><system>expr <get name="prezzo_ordine" /> + 10</system>€</li>
+					</condition>
+				</li>
+			</condition>
+			. Vuoi modificare altro?
+		</template>
+	</category>
+</topic>
+
+<topic name="COLOREMOD">
+	<category>
+		<pattern><set>colori</set></pattern>
+		<template>
+			<think><set name="colore_ordine"><star /></set></think>
+			<condition name="colore_ordine">
+				<li value="">Il colore richiesto non è disponibile. Scegli un altro colore.</li>
+				<li><think><set name="topic">MODIFICA2</set></think> Il colore del cinturino che hai specificato è: <get name="colore_ordine" />. Vuoi modificare altro?</li>
+			</condition> 
+		</template>
+	</category>
+</topic>
+
+<topic name="VETRINOMOD">
+	<category>
+		<pattern># <regex pattern="[SÌ|SI]" /> #</pattern>
+		<template>
+			<condition name="vetrino_ordine">
+				<li value="sì">Hai già aggiunto il vetrino protettivo.</li>
+				<li value="si">Hai già aggiunto il vetrino protettivo.</li>
+				<li><think><set name="prezzo_ordine"><system>expr <get name="prezzo_ordine" /> + 10</system></set><set name="vetrino_ordine">si</set></think>Ho aggiunto il vetrino protettivo.</li>
+			</condition>
+			<think><set name="topic">MODIFICA2</set></think>Vuoi modificare altro?
+		</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>
+			<condition name="vetrino_ordine">
+				<li value="sì"><think><set name="prezzo_ordine"><system>expr <get name="prezzo_ordine" /> - 10</system></set><set name="vetrino_ordine">no</set></think>Ho rimosso il vetrino protettivo.</li>
+				<li value="si"><think><set name="prezzo_ordine"><system>expr <get name="prezzo_ordine" /> - 10</system></set><set name="vetrino_ordine">no</set></think>Ho rimosso il vetrino protettivo.</li>
+				<li>Anche prima non avevi aggiunto il vetrino protettivo.</li>
+			</condition>
+			<think><set name="topic">MODIFICA2</set></think>Vuoi modificare altro?
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Non ho capito. Vuoi il vetrino protettivo?</template>
+	</category>
+</topic>
+
+<topic name="INDIRIZZOMOD">
+	<category>
+		<pattern><regex pattern="[VIA|VIALE|PIAZZA|PIAZZALE|STRADA|CONTRADA|TRAVERSA|CALLE|CORTE|RIO TERÀ|RIVA|FONDAMENTA|PONTE|RUGA|SALITA|CAMPO|PISCINA|SVINCOLO|LUNGOMARE|SESTIERE|QUARTIERE|RIVIERA]" />*</pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			L'indirizzo di consegna specificato è: 
+			<set name="indirizzo_ordine"><formal><star index="1" /><star index="2" /></formal></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>L'indirizzo inserito non è espresso nella forma corretta. Inserisci l'indirizzo completo senza abbreviazioni, senza CAP e senza città di consegna.</template>
+	</category>
+</topic>
+
+<topic name="CITTÀMOD">
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			La città di consegna specificata è: 
+			<set name="città_ordine"><formal><star /></formal></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+</topic>
+
+<topic name="CAPMOD">
+	<category>
+		<pattern><regex pattern="^\d{5}$" /></pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			Il CAP di consegna è:
+			<set name="cap_ordine"><star /></set>.
+			Vuoi modificare altro?
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Il CAP non è nella forma corretta. Ti ricordo che è composto da 5 numeri. Inserisci il CAP.</template>
+	</category>
+</topic>
+
+<topic name="CARTAMOD">
+<category>
+		<pattern><regex pattern="^5[1-5]\d{2}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$" /></pattern>
+		<template><think><set name="topic">MODIFICA2</set><set name="carta_ordine"><star /></set></think>Hai scelto come pagamento una carta Mastercard.<think><set name="topic">MODIFICA2</set></think>Vuoi modificare altro?</template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="^4\d{3}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$" /></pattern>
+		<template><think><set name="topic">MODIFICA2</set><set name="carta_ordine"><star /></set></think>Hai scelto come pagamento una carta Visa.<think><set name="topic">MODIFICA2</set></think>Vuoi modificare altro?</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>La carta inserita non è valida. Ti ricordo che puoi inserire solo carte Visa o Mastercard. Inserisci una carta valida.</template>
+	</category>
+</topic>
+
+<topic name="MODIFICA2">
+	<category>
+		<pattern># <regex pattern="[SÌ|SI]" /> #</pattern>
+		<template>
+			<think><set name="topic">MODIFICA</set></think>
+			<srai>SÌ</srai>		
+		</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>
+			<think><set name="topic">MODIFICA3</set></think>Stai modificando l'ordine <get name="id_ordine" />. Stai richiedendo il modello <get name="modello_ordine" /> con cinturino di colore <get name="colore_ordine" /> e <condition name="vetrino_ordine"><li value="si">hai</li><li>non hai</li></condition> aggiunto il vetrino protettivo. Hai scelto come indirizzo di spedizione <get name="indirizzo_ordine" />, <get name="città_ordine" />, <get name="cap_ordine" />. Il nominativo di consegna è <get name="cognome_ordine" /> <get name="nome_ordine" />. Il numero di cellulare di contatto è <get name="cellulare_ordine" />. Il prezzo totale dell'ordine è <get name="prezzo_ordine" />. Scrivi CONFERMO per confermare la modifica. Scrivi ANNULLA MODIFICHE per annullare le modifiche. Scrivi CONTINUA per continuare a modificare l'ordine. Scrivi RIEPILOGO per visualizzare un riepilogo dell'ordine.
+		</template>
+	</category>
+</topic>
+
+<topic name="MODIFICA3">
+	<category>
+		<pattern><regex pattern="[$CONTINUA|$Continua|$continua]" /></pattern>
+		<template>
+			<think><set name="topic">MODIFICA</set></think>
+			<srai>SÌ</srai>	
+		</template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="[$CONFERMO|$Confermo|$confermo]" /></pattern>
+		<template><think><set name="topic">*</set></think> 
+			<system>
+				./modifica_ordine.py "<denormalize><get name="cognome_ordine" /></denormalize>" "<denormalize><get name="nome_ordine" /></denormalize>" "<denormalize><get name="modello_ordine" /></denormalize>" "<denormalize><get name="colore_ordine" /></denormalize>" "<denormalize><get name="vetrino_ordine" /></denormalize>" "<denormalize><get name="indirizzo_ordine" /></denormalize>" "<denormalize><get name="città_ordine" /></denormalize>" "<denormalize><get name="cap_ordine" /></denormalize>" "<get name="cellulare_ordine" />" "<get name="id_ordine" />" "<get name="prezzo_ordine" />" "<get name="carta_ordine" />"
+			</system>.
+		</template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="[$RIEPILOGO|$Riepilogo|$riepilogo]" /></pattern>
+		<template>
+			<think><set name="topic">MODIFICA2</set></think>
+			<srai>NO</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Scrivi CONFERMO per confermare la modifica. Scrivi ANNULLA MODIFICHE per annullare le modifiche. Scrivi MODIFICA per continuare a modificare l'ordine. Scrivi RIEPILOGO per visualizzare un riepilogo dell'ordine.</template>
+	</category>
+</topic>
+
+</aiml>

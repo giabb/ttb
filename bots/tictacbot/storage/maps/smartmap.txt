@@ -1,0 +1,136 @@
+Apple Watch Series 3:Apple Watch Series 3
+Apple 3:Apple Watch Series 3
+Apple Watch 3:Apple Watch Series 3
+Apple Watch Series 4:Apple Watch Series 4
+Apple 4:Apple Watch Series 4
+Apple Watch 4:Apple Watch Series 4
+ZenWatch 3:ASUS ZenWatch 3
+ASUS ZenWatch 3:ASUS ZenWatch 3
+Pro Trek Smart WSD F20:Casio Pro Trek Smart WSD F20
+WSD F20:Casio Pro Trek Smart WSD F20
+Casio Pro Trek Smart:Casio Pro Trek Smart WSD F20
+Casio Pro Trek WSD F20:Casio Pro Trek Smart WSD F20
+Casio WSD F20:Casio Pro Trek Smart WSD F20
+Casio Smart:Casio Pro Trek Smart WSD F20
+Pro Trek:Casio Pro Trek Smart WSD F20
+Pro Trek Smart:Casio Pro Trek Smart WSD F20
+Casio Pro Trek:Casio Pro Trek Smart WSD F20
+Casio Pro Trek Smart WSD F20:Casio Pro Trek Smart WSD F20
+Diesel On Full Guard:Fossil Diesel On Full Guard
+Fossil Diesel On Full Guard:Fossil Diesel On Full Guard
+Full Guard:Fossil Diesel On Full Guard
+Diesel On:Fossil Diesel On Full Guard
+Fossil Full Guard:Fossil Diesel On Full Guard
+Fossil Diesel On:Fossil Diesel On Full Guard
+Misfit Phase:Fossil Misfit Phase
+Fossil Misfit Phase:Fossil Misfit Phase
+Phase:Fossil Misfit Phase
+Fossil Phase:Fossil Misfit Phase
+Misfit Vapor:Fossil Misfit Vapor
+Fossil Misfit Vapor:Fossil Misfit Vapor
+Vapor:Fossil Misfit Vapor
+Fossil Vapor:Fossil Misfit Vapor
+Fossil Commuter:Fossil Q Commuter
+Fossil Q Commuter:Fossil Q Commuter
+Q Commuter:Fossil Q Commuter
+Commuter:Fossil Q Commuter
+Fossil Explorist:Fossil Q Explorist
+Fossil Q Explorist:Fossil Q Explorist
+Q Explorist:Fossil Q Explorist
+Explorist:Fossil Q Explorist
+Q Jacqueline:Fossil Q Jacqueline
+Fossil Q Jacqueline:Fossil Q Jacqueline
+Jacqueline:Fossil Q Jacqueline
+Fossil Jacqueline:Fossil Q Jacqueline
+Q Neely:Fossil Q Neely
+Fossil Q Neely:Fossil Q Neely
+Neely:Fossil Q Neely
+Fossil Neely:Fossil Q Neely
+Q Venture:Fossil Q Venture
+Fossil Q Venture:Fossil Q Venture
+Venture:Fossil Q Venture
+Fossil Venture:Fossil Q Venture
+Fenix 5:Garmin Fenix 5
+Garmin Fenix 5:Garmin Fenix 5
+Fenix 5S Plus:Garmin Fenix 5S Plus
+Garmin Fenix 5S Plus:Garmin Fenix 5S Plus
+Fenix 5S:Garmin Fenix 5S Plus
+Fenix Plus:Garmin Fenix 5S Plus
+Watch 2:Huawei Watch 2
+Huawei Watch 2:Huawei Watch 2
+Watch Sport:LG Watch Sport
+LG Watch Sport:LG Watch Sport
+Watch Style:LG Watch Style
+LG Watch Style:LG Watch Style
+Moto 360 Sport:Motorola Moto 360 Sport
+Motorola Moto 360 Sport:Motorola Moto 360 Sport
+Moto 360:Motorola Moto 360 Sport
+Moto Sport:Motorola Moto 360 Sport
+Motorola 360:Motorola Moto 360 Sport
+Motorola Sport:Motorola Moto 360 Sport
+M600:Polar M600
+Polar M600:Polar M600
+Polar:Polar M600
+Galaxy Watch:Samsung Galaxy Watch
+Samsung Galaxy Watch:Samsung Galaxy Watch
+Galaxy:Samsung Galaxy Watch
+Gear S3 Classic:Samsung Gear S3 Classic
+Samsung Gear S3 Classic:Samsung Gear S3 Classic
+S3 Classic:Samsung Gear S3 Classic
+Gear S3:Samsung Gear S3 Classic
+Samsung Gear:Samsung Gear S3 Classic
+Classic:Samsung Gear S3 Classic
+Gear:Samsung Gear S3 Classic
+Gear Classic:Samsung Gear S3 Classic
+Gear S3 Frontier:Samsung Gear S3 Frontier
+Samsung Gear Frontier:Samsung Gear S3 Frontier
+Samsung Gear S3 Frontier:Samsung Gear S3 Frontier
+Gear Frontier:Samsung Gear S3 Frontier
+Frontier:Samsung Gear S3 Frontier
+Samsung Frontier:Samsung Gear S3 Frontier
+Gear Sport:Samsung Gear Sport
+Samsung Gear Sport:Samsung Gear Sport
+Samsung Sport:Samsung Gear Sport
+Sony 3:Sony smartwatch 3
+Sony smartwatch 3:Sony smartwatch 3
+Ticwatch Express:Mobvoi Ticwatch Express
+Mobvoi Ticwatch Express:Mobvoi Ticwatch Express
+Ticwatch E:Mobvoi Ticwatch Express
+Ticwatch-E:Mobvoi Ticwatch Express
+Mobvoi Express:Mobvoi Ticwatch Express
+Mobvoi E:Mobvoi Ticwatch Express
+Mobvoi-E:Mobvoi Ticwatch Express
+Ticwatch Pro:Mobvoi TicWatch Pro
+Mobvoi Pro:Mobvoi TicWatch Pro
+Mobvoi TicWatch Pro:Mobvoi TicWatch Pro
+Ticwatch S:Mobvoi Ticwatch Sport
+Ticwatch-S:Mobvoi Ticwatch Sport
+Mobvoi Ticwatch Sport:Mobvoi Ticwatch Sport
+Ticwatch Sport:Mobvoi Ticwatch Sport
+Mobvoi Sport:Mobvoi Ticwatch Sport
+Mobvoi S:Mobvoi Ticwatch Sport
+Mobvoi-S:Mobvoi Ticwatch Sport
+Spark 3:TomTom Spark 3
+TomTom Spark 3:TomTom Spark 3
+TomTom:TomTom Spark 3
+TomTom 3:TomTom Spark 3
+Amazfit Bip:Xiaomi Amazfit Bip
+Xiaomi Amazfit Bip:Xiaomi Amazfit Bip
+Bip:Xiaomi Amazfit Bip
+Amazfit:Xiaomi Amazfit Bip
+Xiaomi:Xiaomi Amazfit Bip
+Xiaomi Bip:Xiaomi Amazfit Bip
+Amazfit Stratos:Xiaomi Amazfit Stratos
+Xiaomi Amazfit Stratos:Xiaomi Amazfit Stratos
+Stratos:Xiaomi Amazfit Stratos
+Xiaomi Stratos:Xiaomi Amazfit Stratos
+Amazfit Pace:Xiaomi Amazfit Pace
+Xiaomi Amazfit Pace:Xiaomi Amazfit Pace
+Pace:Xiaomi Amazfit Pace
+Xiaomi Pace:Xiaomi Amazfit Pace
+un orologio:smartwatch
+un vostro orologio:smartwatch
+uno smartwatch:smartwatch
+un smartwatch:smartwatch
+un vostro smartwatch:smartwatch
+smartwatch:smartwatch

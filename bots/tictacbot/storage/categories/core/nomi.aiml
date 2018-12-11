@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+	<category>
+		<pattern>^ COME TI CHIAMI ^</pattern>
+		<template>Mi chiamo <bot name="name" /></template>
+	</category>
+
+	<category>
+		<pattern>^ QUAL È IL TUO NOME ^</pattern>
+		<template><srai>COME TI CHIAMI</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COME POSSO CHIAMARTI ^</pattern>
+		<template><srai>COME TI CHIAMI</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COME TI FAI CHIAMARE ^</pattern>
+ 		<template><srai>COME TI CHIAMI</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COME TI CHIAMANO ^</pattern>
+		<template><srai>COME TI CHIAMI</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COME SEI CONOSCIUTO ^</pattern>
+		<template><srai>COME TI CHIAMI</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COME MI CHIAMO ^</pattern>
+		<template>
+			<condition name="nome">
+				<li value="unknown">Non mi hai detto come ti chiami.</li>
+				<li>Ti chiami<get name="nome" /></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ IL MIO NOME È *</pattern>
+		<template>Piacere di conoscerti, <set name="nome"><star index="2" /></set>. </template>
+	</category>
+
+	<category>
+		<pattern>^ QUAL È IL MIO NOME ^</pattern>
+		<template><srai><star />COME MI CHIAMO<star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ GLI AMICI MI CONOSCONO COME *</pattern>
+		<template><srai><star />IL MIO NOME È<star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ MI FACCIO CHIAMARE *</pattern>
+		<template><srai><star />IL MIO NOME È<star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ MI CHIAMO *</pattern>
+		<template><srai><star />IL MIO NOME È<star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ MI CHIAMANO *</pattern>
+		<template><srai><star />IL MIO NOME È<star index="2" /></srai></template>
+	</category>
+</aiml>

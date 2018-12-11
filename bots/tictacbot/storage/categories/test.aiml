@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+		<pattern>PROVEVARIE</pattern>
+		<template><bot name="birthplace" /></template>
+	</category>
+
+	<category>
+		<pattern>IMPARA CHE * È *</pattern>
+		<template>Ok. Ho imparato.
+			<learn>
+				<category>
+					<pattern>SAI QUALCOSA RIGUARDO <eval><star index="1" /></eval></pattern>
+					<template>So che <eval><star index="1" /></eval> è <eval><star index="2" /></eval></template>
+				</category>
+			</learn>
+		</template>
+	</category>
+
+	<category>
+		<pattern>INFO</pattern>
+		<template><program /></template>
+	</category>
+	 
+	<category>
+		<pattern>QUANTE PAROLE CONOSCI</pattern>
+		<template>Conosco <size /> parole</template>
+	</category>
+	 
+	<category>
+		<pattern>QUANTO È GRANDE IL TUO CERVELLO</pattern>
+		<template>Il mio cervello contiene <vocabulary /> categories</template>
+	</category>
+
+</aiml>

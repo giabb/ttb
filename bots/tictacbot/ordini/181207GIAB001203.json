@@ -1,0 +1,21 @@
+{
+    "181207GIAB001203": [
+        {
+            "cognome": " Abbate ",
+            "nome": " Giovanbattista ",
+            "cellulare": "3331234567",
+            "modello": " Mobvoi Ticwatch Express ",
+            "colore_cinturino": " Rosso ",
+            "ha_aggiunto_vetrino": "si",
+            "indirizzo": " Via Roma 29 ",
+            "citta": " Aversa ",
+            "cap": " 81031 ",
+            "prezzo": "179",
+            "carta": "4123456789012345",
+            "giorno": "07/12/2018",
+            "orario": "00:12:03",
+            "giorno_modifica": "07/12/2018",
+            "orario_modifica": "00:48:02"
+        }
+    ]
+}

@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+		<pattern>QUANTO COSTA IL *</pattern>
+		<template>
+			<think><set var="mod"><map><name>smartmap</name><star /></map></set></think>
+			<condition var="mod">
+				<li value="">Non conosco il prezzo di questo modello.</li>
+				<li>Il modello <get var="mod" /> costa <srai>SELEZIONA SOGG <get var="mod" /> PRED PREZZO</srai>€</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ PREZZO DEL *</pattern>
+		<template><srai>QUANTO COSTA IL <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSTO DEL *</pattern>
+		<template><srai>QUANTO COSTA IL <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ QUANTO * SPENDERE PER <set>articoli</set> *</pattern>
+		<template><srai>QUANTO COSTA IL <star index="4" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ MODELLO *</pattern>
+		<template>
+			<think><set name="topic">INFO</set></think>
+			<srai><map><name>smartmap</name><star index="2" /></map></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE RIGUARDO *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE TECNICHE RIGUARDO *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE RIGUARDO <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE A RIGUARDO DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE TECNICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CARATTERISTICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE TECNICHE *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE TECNICHE SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE TECNICHE DI <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECIFICHE TECNICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ SPECS *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI RIGUARDO <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI A RIGUARDO DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI PER QUANTO RIGUARDA <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA SAI SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ PARLAMI *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ PARLAMI DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ PARLAMI A RIGUARDO DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI PER <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI TECNICHE *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI TECNICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI TECNICHE SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI RIGUARDO <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI TECNICHE RIGUARDO <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFORMAZIONI TECNICHE PER <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO PER <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO PER QUANTO RIGUARDA <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO RIGUARDO *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO TECNICHE SUL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO TECNICHE DEL *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO TECNICHE RIGUARDO <set>articoli</set> *</pattern>
+		<template><srai>MODELLO <star index="3" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ INFO TECNICHE RIGUARDO *</pattern>
+		<template><srai>MODELLO <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ È DISPONIBILE IL *</pattern>
+		<template>
+			<think><set var="mdl"><map><name>smartmap</name><star index="2" /></map></set></think>
+			<condition var="mdl">
+				<li value="">Mi dispiace, ma il modello richiesto non è disponibile.</li>
+				<li>Certo, il modello <get var="mdl" /> è disponibile.</li>			
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ AVETE IL *</pattern>
+		<template><srai>È DISPONIBILE IL <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ AVETE DISPONIBILE IL *</pattern>
+		<template><srai>È DISPONIBILE IL <star index="2" /></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ UN INFORMAZIONE</pattern>
+		<template>Chiedi pure.</template>
+	</category>
+
+<topic name="INFO">
+	<category>
+		<pattern>MOBVOI TICWATCH EXPRESS</pattern>
+		<template><think><set name="topic">*</set></think>
+Ticwatch E (per esteso Ticwatch Express), è uno smartwatch economico (rispetto alla concorrenza), ma di ottima fattura e dotato di caratteristiche tecniche davvero interessanti;  monta Android Wear 2.0, ed è prodotto da Mobvoi, un'azienda cinese attiva da anni nel settore dell'intelligenza artificiale. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/ticwatch-e</template>
+	</category>
+
+	<category>
+		<pattern>APPLE WATCH SERIES 3</pattern>
+		<template><think><set name="topic">*</set></think>
+Apple Watch Series 3 e' la terza generazione di smartwatch di Apple, annunciato a settembre 2017, simile al modello di seconda generazione (Series 2) con in piu' la possibilita' di acquistare la versione GPS+LTE che puo' essere usato con E-SIM senza iPhone nelle vicinanze (non in Italia). Apple Watch Series 3 resiste all'acqua fino ad una profondità di 50 metri e puo' essere indossato anche in piscina o al mare, ha un processore dual-core due volte piu' veloce e un display AMOLED da 1.65 pollici di risoluzione 390x312 pixel e con 1000 nits di luminosita'. Apple Watch Serie 3 ha un GPS integrato per registrare gli allenamenti e sistema operativo WatchOS 4. Apple Watch Series 3 in Italia disponibile solo nella versione GPS (non con LTE). Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/apple-3</template>
+	</category>
+
+	<category>
+		<pattern>APPLE WATCH SERIES 4</pattern>
+		<template><think><set name="topic">*</set></think>Apple Watch Series 4, annunciato a settembre 2018, ha un Display Retina OLED LTPO con Force Touch (1000 nit) in un cassa in alluminio color argento con fondo in ceramica, cristallo di zaffiro e Vetro Ion‑X rinforzato, connettivita GPS integrata (GLONASS, Galileo e QZSS), Wi-Fi (802.11b/g/n a 2,4GHz), Bluetooth 5.0. Apple Watch Series 4 monta il processore S4 dual‑core a 64 bit, Chip wireless Apple W3, altimetro barometrico, 16GB di memoria per lo storage di musica da riprodurre in locale via altoparlante, cardiofrequenzimetro ottico, cardiofrequenzimetro elettrico, accelerometro e giroscopio di nuove generazioni rispetto al predecessore, sensore di luce ambientale. La corona digitale Digital Crown ha il feedback aptico. Batteria ricaricabile integrata agli ioni di litio con fino a 18 ore di autonomia. Apple Watch Series 4 resiste a acqua fino a 50 metri. Sistema operativo watchOS 5. Watch Series 4 disponibile nelle dimensioni da 40mm e 44mm e nelle versioni GPS e GPS+Cellular (questo modello ha anche un modulo per 4G LTE e UMTS). Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/apple-4</template>
+	</category>
+
+	<category>
+		<pattern>ASUS ZENWATCH 3</pattern>
+		<template><think><set name="topic">*</set></think>Realizzato in acciaio e con un elegante cinturino in vera pelle italiana, ASUS ZenWatch 3 unisce le performance tecnologiche di un processore Qualcomm® Snapdragon™ Wear 2100, all’eleganza di un orologio tradizionale. In più, grazie alla tecnologia HyperCharge, si ricarica del 60% in solo 15 minuti. ZenWatch 3 è dotato della nuova, esclusiva app ZenFit che conta automaticamente i tuoi passi e ti dà un quadro completo della tua attività fisica quotidiana. Inoltre, durante le sessioni di sport, ti permette di monitorare la corsa, le flessioni e tanto altro. ZenWatch 3 è anche resistente all'acqua (IP67), può essere immerso fino a un metro di profondità per 30 minuti e indossato anche sotto la doccia. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/zenwatch-3</template>
+	</category>
+
+	<category>
+		<pattern>CASIO PRO TREK SMART WSD F20</pattern>
+		<template><think><set name="topic">*</set></think>Casio PRO TREK Smart WSD-F20 è stato presentato a Las Vegas nei primi giorni di gennaio del 2017, durante il CES 2017. Il lancio ufficiale sul mercato globale è però avvenuto soltanto il 27 Aprile, ed anche in Italia è stato reso disponibile fin da subito. WSD-F20 è equipaggiato con Android Wear 2.0, ed è un device molto robusto e resistente: infatti ha ottenuto la certificazione speciale MIL-STD-810G (normativa militare statunitense emessa dal Dipartimento della Difesa degli Stati Uniti), ed è quindi anche impermeabile, e resistente all'immersione fino a 50 mt. Più libertà per le tue avventure: con lo smartwatch WSD-F20 trovi il cammino da percorrere anche senza l'ausilio di Internet e smartphone. L'orologio da outdoor, robusto e impermeabile, dispone di un GPS a risparmio energetico e di mappe a colori offline che possono essere caricate sullo smartwatch prima di un'escursione e utilizzate, quindi, senza il ricorso a una rete mobile o a una connessione a Internet. Secondo la tipologia di attività, sono a disposizione diversi tipi di mappe. Per una maggiore varietà, il quadrante intercambiabile visualizza informazioni sulla posizione, sul meteo e i dati sull'escursione. Tante altre pratiche app e funzioni fanno dello smartwatch WSD-F20 un orologio ideale per le attività all'aria aperta e in acqua.
+E' disponibile in due varianti di colore, Orange e Black.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/pro-trek</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL DIESEL ON FULL GUARD</pattern>
+		<template><think><set name="topic">*</set></think>Diesel ON Full Guard è stato presentato in modo molto sommario (nell'occasione infatti si è vista una sola foto, e niente più) il 23 Marzo 2017 durante la conferenza stampa di FOSSIL GROUP, tenuta in concomitanza con la data d'inizio di Baselworld 2017. Le uniche informazioni rilasciate sul momento, sono state veramente poche: sistema operativo Android Wear 2.0, display full touch, e data di rilascio sul mercato, fissata per il periodo "Holiday 2017". Il pre-lancio sul mercato è avvenuto abbastanza in sordina, e gradualmente, sui siti ufficiali del gruppo, a partire dal 30 Agosto 2017, inizialmente con un solo modello disponibile, il DZT2002. Lo smartwatch è poi stato presentato al grande pubblico in tutta la sua collezione (composta di cinque modelli) a partire da due giorni dopo (1 settembre), durante la fiera dell'elettronica IFA 2017 di Berlino, per poi essere lanciato negli Stati Uniti il 25/09 e in Europa il mese successivo, il 14 Ottobre 2017. La gamma è stata ampliata a Gennaio 2018, con due nuovi modelli, con codici DZT2006 e DZT2007. Full Guard è dotato di Diesel On Interactive Effects. Per tenerti aggiornato puoi scegliere fra tre modalità con notifiche animate su meteo, attività (Activity progress monitor) e modalità Do not disturb. Dotato di tecnologia Android Wear™, lo smartwatch si connette con le tue app preferite ed è compatibile con smartphone Apple® e Android™. Grazie al fitness tracker integrato di Google Fit™, puoi controllare le calorie bruciate, i passi e le distanze percorse. Ricevi subito notifiche come chiamate e avvisi. Rendi unico il tuo orologio selezionando o personalizzando il quadrante di tua scelta e cambiando i cinturini per adattarli alle tua attività o al tuo look.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/dofg</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL Q COMMUTER</pattern>
+		<template><think><set name="topic">*</set></think>Q commuter è un nuovo ibrido dal design minimalista che usa la tecnologia intelligente per inviarti notifiche discrete, visualizzare un secondo fuso orario e molto altro ancora. Personalizza i tre pulsanti con le tue funzioni preferite, come controllare la tua musica o rintracciare il telefono facendolo squillare. Con la tecnologia dell'App Fossil Q, gli smartwatch ibridi Fossil Q sono compatibili con telefoni dotati di sistema operativo Android™ OS 5.0 e successivi, o iOS 9.0 e versioni successive. Grazie alla app "Fossil Q", disponibile per Android ed iOS, infatti, ricevi avvisi dalle tue app e dai tuoi contatti preferiti, puoi confrontare vari fusi orari e monitorare tutto ciò che desideri, dai passi al sonno. Trasforma il tuo smartwatch in un telecomando con LINK, un pulsante smart che ti consente di scattare foto, gestire la musica o far squillare il tuo telefono. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/commuter</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL Q VENTURE</pattern>
+		<template><think><set name="topic">*</set></think>Uno smartwatch moderno, con un'estetica classica ed elegante. Con un nuovo display digitale a pieno schermo, il Q Venture offre numerose funzionalità, tra cui quadranti personalizzabili, notifiche discrete e monitoraggio di attività automatico. Con tecnologia Android Wear™ 2.0, Fossil Q Venture è compatibile con telefoni con sistema operativo Android™ 4.3 e successivi o iOS 9 e successivi. Le funzionalità supportate possono variare in base alla piattaforma.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/venture</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL Q EXPLORIST</pattern>
+		<template><think><set name="topic">*</set></think>È arrivato il momento dell'avventura: lo smartwatch Q Explorist ti mantiene connesso ovunque tu sia. Personalizza il display a schermo pieno e i tre pulsanti con le tue funzionalità preferite, ricevi notifiche (quando sei in movimento) e monitora automaticamente la tua attività, dalle escursioni alla palestra. Con tecnologia Android Wear™ 2.0, Fossil Q Venture è compatibile con telefoni con sistema operativo Android™ 4.3 e successivi o iOS 9 e successivi. Le funzionalità supportate possono variare in base alla piattaforma. E' disponibile in 5 varianti.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/explorist</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL Q NEELY</pattern>
+		<template><think><set name="topic">*</set></think>Sottile, facile da abbinare e realizzato per mantenerti connesso: Q Neely ibrido sembra un normale orologio, ma nasconde uno smartwatch. Con la tecnologia dell'App Fossil Q, gli smartwatch ibridi Fossil Q sono compatibili con telefoni dotati di sistema operativo Android™ OS 5.0 e successivi, o iOS 9.0 e versioni successive. E' stato lanciato sul mercato in tre varianti di modello, tutte con cassa da 36 mm di diametro e 12 mm di spessore, in acciaio inossidabile, e cinturini in pelle da 16 mm.  Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/neely</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL Q JACQUELINE</pattern>
+		<template><think><set name="topic">*</set></think>Modello classico ma con un tocco smart, l'ibrido Q Jacqueline alimentato a batteria sembra un normale orologio, ma nasconde uno smartwatch. Ricevi notifiche di messaggi e chiamate, aggiorna istantaneamente l'ora e la data (ovunque ti trovi), personalizza i tuoi pulsanti e molto altro. Con la tecnologia dell'App Fossil Q, gli smartwatch ibridi Fossil Q sono compatibili con telefoni dotati di sistema operativo Android™ OS 5.0 e successivi, o iOS 9.0 e successivi. E' stato lanciato sul mercato in tre varianti di modello, tutte con cassa da 36 mm di diametro e 12 mm di spessore, in acciaio inossidabile, e cinturini in pelle da 14 mm. A dicembre 2017 la gamma è stata ampliata con quattro nuove varianti di modello, tutte con cassa da 36 mm di diametro e 12 mm di spessore, in acciaio inossidabile, e cinturini da 14 mm in acciaio inossidabile a maglia mesh. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/jaq</template>
+	</category>
+
+	<category>
+		<pattern>GARMIN FENIX 5S PLUS</pattern>
+		<template><think><set name="topic">*</set></think>La gamma Fenix della Garmin presenta diversi modelli, che presentiamo insieme per chiarezza. I modelli sono diventati tre, ciascuno disponibile in più varianti e finiture: fēnix 5S, dalle dimensioni pensate per i polsi più piccoli e sottili (cassa da 42mm), fēnix 5, dalle dimensioni intermedie (cassa da 47mm), e fēnix 5X, il primo cartografico della famiglia (cassa da 51mm). I primi due sono disponibili sia in vetro normale sia, con un sovrapprezzo di 100€, in vetro zaffiro (che assicura superiore resistenza a urti e graffi), il terzo solo in quest’ultimo. Per maggiori informazioni clicca sul seguente link: http://bit.ly/gitfenix</template>
+	</category>
+
+	<category>
+		<pattern>GARMIN FENIX 5</pattern>
+		<template><think><set name="topic">*</set></think><srai>GARMIN FENIX 5S PLUS</srai></template>
+	</category>
+
+	<category>
+		<pattern>HUAWEI WATCH 2</pattern>
+		<template><think><set name="topic">*</set></think>Huawei Watch 2 è uno smartwatch touch screen con Android Wear, presentato da Huawei al MWC 2017 (Mobile World Congress) di Barcellona. Come dice il nome, è il successore di Huawei Watch, e ne esiste anche una versione più sportiva, chiamata semplicemente Huawei Watch 2 Classic. Entrambi sono stati lanciati dapprima su alcuni mercati (Cina, Germania, Spagna, Francia, Portogallo e Italia), per poi arrivare successivamente anche negli Stati Uniti, Regno Unito ed altri paesi. Per quanto riguarda Huawei Watch 2, è arrivato in Italia a Maggio 2017 nella versione bluetooth, e a Luglio 2017 nella versione 4G. Huawei Watch 2 è disponibile in tre varianti di colore, denominate Dynamic Orange (solo modello 4G), Carbon Black (sia modello 4G che non-4G), Concrete Grey (solo modello non-4G), con cassa di 45 mm di diametro interamente in plastica, ghiera in ceramica, cinturino intercambiabile da 20 mm in silicone. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/watch-2</template>
+	</category>
+
+	<category>
+		<pattern>LG WATCH STYLE</pattern>
+		<template><think><set name="topic">*</set></think>LG Watch Style (W270) è stato presentato a Febbraio 2017 in occasione del MWC (Mobile World Congress), insieme LG Watch Sport. La commercializzazione effettiva è avvenuta a fine Aprile in USA e Canada, e dal 9 Maggio 2017 in Italia. In Europa, e quindi anche in Italia, viene commercializzata esclusivamente la versione con cassa in acciaio inossidabile silver e cinturino in pelle color cuoio; mentre in altri mercati le varianti di colore disponibili sono tre (tre colori diversi della cassa abbinati ad altrettanti cinturini, tutti in pelle). Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/watch-style</template>
+	</category>
+
+	<category>
+		<pattern>LG WATCH SPORT</pattern>
+		<template><think><set name="topic">*</set></think>LG Watch Sport è stato annunciato il 9 Febbraio 2017 con un comunicato stampa ufficiale, e presentato al pubblico il 27 Febbraio 2017 in occasione del MWC (Mobile World Congress) di Barcellona, insieme ad un altro modello, LG Watch Style (W270). La commercializzazione effettiva è iniziata il 10 Febbraio negli USA, per poi estendersi gradualmente anche al mercato asiatico. In Europa non è mai stato commercializzato ufficialmente, a differenza del modello complementare LG Watch Style, che invece è arrivato. Negli USA viene commercializzato con i codici modello W280A (versione ATeT) e W280V (Versione Verizon), mentre in asia prende la sigla W281. LE caratteristiche rimangano le medesime in tutti i mercati, tranne ovviamente le varie bande e frequenze del 4G, che variano da continente a continente. LG Watch Sport viene prodotto in due varianti di colore: Titanium, per il mercato USA, e Dark Blue, per il mercato asiatico. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/watch-sport</template>
+	</category>
+
+	<category>
+		<pattern>MOBVOI TICWATCH SPORT</pattern>
+		<template><think><set name="topic">*</set></think>Ticwatch S (per esteso Ticwatch Sport), è uno smartwatch economico (rispetto alla concorrenza), ma di ottima fattura e dotato di caratteristiche tecniche davvero interessanti;  monta Android Wear 2.0, ed è prodotto da Mobvoi, un'azienda cinese attiva da anni nel settore dell'intelligenza artificiale. E' stato lanciato sul mercato a fine Ottobre 2017, e distribuito inizialmente solo sul sito del produttore, attraverso una fase di pre-ordine. In italia la distribuzione ufficiale è gestita da DLM Group Srls, attraverso il sito www.ticwatch.it. Ticwatch Sport ha una vasta gamma di sensori, tra cui GPS e cardiofrequenzimetro (quest'ultimo, a voler dare una nota più sportiva, è integrato direttamente nel cinturino). E' inoltre certificato IP67, e può quindi essere utilizzato anche in condizioni ambientali particolari. Oltre al classico software dell'ecosistema Android Wear, Ticwatch Sport può contare su una vasta gamma di app sviluppate appositamente da Mobvoi, e preinstallate nativamente sul dispositivo. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/ticwatch-s</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL MISFIT PHASE</pattern>
+		<template><think><set name="topic">*</set></think> Orologio da polso classico, calcola automaticamente passi, distanza, calorie e sonno leggero e riposante Avvisi con vibrazione per notifiche SMS e chiamate, sveglie, notifiche delle app personalizzate La funzione pulsante smart ti consente di riprodurre e interrompere la musica, scattare un selfie, controllare dispositivi Smart Home e molto altro Il corpo in acciaio e in alluminio è impermeabile fino a 5 ATM e presenta un display per la visualizzazione di tempo e attività Batteria sostituibile non ricaricabile che dura fino a 6 mesi. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/phase</template>
+	</category>
+
+	<category>
+		<pattern>FOSSIL MISFIT VAPOR</pattern>
+		<template><think><set name="topic">*</set></think> Misfit Vapor è il primo smartwatch touch screen del brand di casa Fossil, ed è stato presentato a Las Vegas a Gennaio 2017, in occasione del salone CES 2017, ma è stato messo in vendita solo a partire dal 31 ottobre 2017, dopo diversi rinvii, che lo hanno fatto diventare, anche grazie alle sue caratteristiche tecniche incentrate sul monitoraggio di specifiche attività sportive, uno degli orologi Android Wear più attesi dell'anno. Misfit Vapor è un orologio smart touch screen unisex, con una cassa dal diametro di 44 mm, e forse per questo è più indicato per un polso maschile. E' stato lanciato in cinque varianti, tutte con cinturino in silicone. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/vapor</template>
+	</category>
+
+	<category>
+		<pattern>MOTOROLA MOTO 360 SPORT</pattern>
+		<template><think><set name="topic">*</set></think>Lo Motorola Moto 360 Sport è uno wearable con sistema operativo Android. Il display di Motorola Moto 360 Sport è da 1,56 pollici e ha una densità di pixel di 263 ppi, questo poiché la sua risoluzione è di 360x325 pixel. Abbiamo in questo dispositivo un processore Qualcomm Snapdragon 400 quad da 1.2 GHz. Il processore grafico è Adreno 305. Abbiamo poi anche 0.512 GB di RAM e 4 GB di memoria. Si dovrà però considerare con attenzione il fatto che questa memoria non è espandibile. La batteria presente all'interno di questo dispositivo è da 300 mAh ma non è removibile. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/moto-360</template>
+	</category>
+
+	<category>
+		<pattern>MOBVOI TICWATCH PRO</pattern>
+		<template><think><set name="topic">*</set></think>Ticwatch Pro è uno smartwatch touch screen economico (rispetto alla concorrenza), ma di ottima fattura e dotato di caratteristiche tecniche davvero interessanti;  monta il sistema operativo, ed è prodotto da Mobvoi, un'azienda cinese attiva da anni nel settore dell'intelligenza artificiale. E' stato lanciato sul mercato a fine Maggio 2018, e distribuito inizialmente solo sul sito del produttore, attraverso una fase di pre-ordine. In italia la distribuzione ufficiale è gestita da DLM Group Srls, attraverso il sito www.ticwatch.it. Ticwatch Pro si affianca a due modelli usciti nel 2017, Ticwatch E e Ticwatch S, che, visto il rapporto qualità/prezzo eccellente,  hanno avuto un ottimo successo. Ticwatch Express ha una vasta gamma di sensori, tra cui GPS e cardiofrequenzimetro. E' inoltre certificato IP68 (grado di resistenza all'acqua e alla polvere), e può quindi essere utilizzato anche in condizioni ambientali particolari. Oltre al classico software dell'ecosistema Wear OS by Google, Ticwatch Pro può contare su una vasta gamma di app sviluppate appositamente da Mobvoi, e preinstallate nativamente sul dispositivo. Ma la novità più interessante di TicWatch Pro viene dal display. Infatti Mobvoi ha abilmente ed intelligentemente posizionato un secondo display trasparente di tipo LCD FSTN (Film Super-twisted nematic) sopra a quello principale.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/tic-pro</template>
+	</category>
+
+	<category>
+		<pattern>POLAR M600</pattern>
+		<template><think><set name="topic">*</set></think>Polar M600 è stato annunciato il 3 Agosto 2016 con un comunicato stampa ufficiale, e introdotto sul mercato a partire da Settembre. E' il primo smartwatch Android Wear del brand finlandese Polar, ed è, completamente ottimizzato per lo sport. Polar M600 viene prodotto e commercializzato in due varianti di colore: Powder White e Charcoal Black. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/m600</template>
+	</category>
+
+	<category>
+		<pattern>SAMSUNG GALAXY WATCH</pattern>
+		<template><think><set name="topic">*</set></think>Lo smartwatch Samsung Galaxy Watch, presentato in Agosto 2018, ha un display AMOLED da 1.3 pollici di risoluzione 360x360 pixel e viene alimentato dal sistema operativo Tizen Based Wearable OS 4.0 e chipset Exynos 9110 Dual core 1.15GHz. Disponibile il modello Bluetooth o LTE, con cassa da 42 mm (colore Midnight Black o Rose Gold) oppure da 46 mm (colore Silver). Personalizzabile con i cinturini in silicone in dotazione o altri cinturini standard, da 20mm per Galaxy Watch in versione 42mm, da 22mm per il modello da 46mm. Memoria interna con player musicale. Galaxy Watch gestisce chiamate, musica e molto altro con una sola ricarica completa e misura il battito cardiaco e monitora oltre 39 tipologie di allenamento. Galaxy Watch misura la qualita del sonno, creando un registro delle sue 4 fasi; monitora anche i livelli di stress per aiutare a ridurli grazie alla respirazione guidata. Galaxy Watch rileva il momento del risveglio e mostra il meteo, gli impegni del giorno, i promemoria e molto altro. Il quadrante My Day mostra gli impegni delle 10 ore successive, per averli tutti sotto controllo. GPS integrato per sapere dove ci si trova e dove si sta andando. Galaxy Watch monta anche un Alti-barometro e resiste alla acqua fino a 5ATM (fino a 40 metri di profondita). Compatibile con Samsung Pay: per pagare basta ruotare leggermente il polso. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/galaxy</template>
+	</category>
+
+	<category>
+		<pattern>SAMSUNG GEAR SPORT</pattern>
+		<template><think><set name="topic">*</set></think> Gear Sport è uno smartwatch di fascia media, fortemente orientato al fitness, come si evince dal nome, ed è stato presentato da Samsung in occasione della conferenza stampa pre-IFA 2017, tenutasi a Berlino il 30 agosto 2017. E' un nuovo smartwatch rivolto praticamente a tutti, dagli sportivi a chi cerca di restare connesso anche senza dover tirare fuori lo smartphone dalla tasca di continuo. Gear Sport è disponibile al prezzo di 349 euro in Italia dal 27 ottobre, come nel resto d'Europa.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/gear-sport</template>
+	</category>
+
+	<category>
+		<pattern>SAMSUNG GEAR S3 CLASSIC</pattern>
+		<template><think><set name="topic">*</set></think>Samsung Gear S3 Classic è uno wearable con sistema operativo Tizen di fascia alta. Il display da 1,3 pollici di questo wearable ha una risoluzione di 360x360 pixel ed è realizzato in tecnologia SuperAMOLED. All'interno del dispositivo troviamo una batteria non removibile da 380 mAh. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/classic</template>
+	</category>
+
+	<category>
+		<pattern>SAMSUNG GEAR S3 FRONTIER</pattern>
+		<template><think><set name="topic">*</set></think>Samsung Gear S3 Frontier è uno wearable di fascia alta con sistema operativo Tizen. La densità di pixel del display SuperAMOLED di wearable è di 278 ppi. Questo grazie ad una risoluzione di 360x360 pixel su di una diagonale di 1,3 pollici. Il dispositivo supporta le reti mobili sino a quelle LTE, mentre la Wi-Fi è di tipo b/g/n e il Bluetooth è 4.2. Non manca il GPS e neanche il chip NFC. Manca invece la radio FM e la porta ad infrarossi. La batteria non removibile è da 380 mAh.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/frontier</template>
+	</category>
+
+	<category>
+		<pattern>SONY SMARTWATCH 3</pattern>
+		<template><think><set name="topic">*</set></think>Sony SmartWatch 3 SWR50 è stato annunciato a Settembre 2014 durante una conferenza stampa (il testo integrale qui) concomitante con la fiera dell'elettronica IFA 2014 a Berlino. Sony SmartWatch 3 SWR50 è stato il primo orologio intelligente di Sony basato su piattaforma Android Wear. Il suo predecessore, infatti, SmartWatch 2, montava un sistema operativo proprietario. Le caratteristiche tecniche vantano un display LCD da 1,6 pollici 320x320 TFT Transflective (e cioè in grado di essere visto anche in piena luce senza problemi, e di consumare pochissima energia in standby), 4GB di ROM, 512MB di RAM e processore da 1.2GHz, oltre a bluetooth, GPS e certificazione IP68. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/sony</template>
+	</category>
+
+	<category>
+		<pattern>XIAOMI AMAZFIT BIP</pattern>
+		<template><think><set name="topic">*</set></think>Amazfit Bip è uno degli smartwatch più reattivi e utilizzabili di Huami e uno dei migliori orologi intelligenti disponibili sul mercato ad prezzo contenuto. E’ dotato di GPS, accelerometro a 3 assi, sensore ottico della frequenza cardiaca, sensore della pressione atmosferica e geomagnetico, inoltre ha ottenuto la certificazione IP68 che lo rende completamente impermeabile. Il display riflettente è facilmente leggibile anche in pieno sole o in interni e mostra tutte le notifiche dell’app del telefono come avvisi di calendario, messaggi di testo, e-mail, Social. Dall’LCD touch screen a colori è possibile accedere alle diverse applicazioni preinstallate e controllare previsioni meteo, allarmi, timer, bussola, panoramica dello stato giornaliero, inclusa la frequenza cardiaca e le opzioni di monitoraggio dello sport. L’orologio è compatibile con telefoni Android 4.4+ e iPhone 8+. L’unico neo di questo orologio è la lingua. E’ stato creato per il mercato cinese quindi la sua lingua originale è, ovviamente, il cinese. Ma con il lancio nel mercato globale è stato creato lo smartwatch con un firmware internazionale, ma in inglese, non in italiano.Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/bip</template>
+	</category>
+
+	<category>
+		<pattern>TOMTOM SPARK 3</pattern>
+		<template><think><set name="topic">*</set></think>Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/spark</template>
+	</category>
+
+	<category>
+		<pattern>XIAOMI AMAZFIT STRATOS</pattern>
+		<template><think><set name="topic">*</set></think>Amazfit Stratos Multisport GPS Smartwatch è stato annunciato il 9 gennaio 2018 da Amazfit, una delle più grandi aziende di wearable (dispositivi indossabili) a livello mondiale. Amazfit Stratos è uno smartwatch GPS multisport con talmente tante ottime caratteristiche da meritarsi la qualifica di “premium”. Il design è semplice, essenziale. La robusta cassa in fibra di carbonio presenta una lunetta in ceramica lucida, vetro Corning Gorilla 2.5D resistente ai graffi, con tre pulsanti in acciaio inossidabile per una facile navigazione. Il display touch-screen transflettivo è sempre attivo, abbinato ad un cinturino in silicone resistente da 22 mm intercambiabile. E’ dotato di GPS integrato, impermeabile, resistenze all’acqua 5ATM.  L’orologio supporta 12 diverse modalità di sport e il tracciamento GPS per: corsa, camminata, bicicletta, nuoto, macchina ellittica, alpinismo, trail running, triathlon, tennis, calcio e sci. Attraverso una partnership con Firstbeat questo orologio misura anche il consumo massimo di ossigeno (VO2max), il carico di esercizio (TD) e il tempo di recupero. E i dati possono essere sincronizzati e resi disponibili in Strava. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/stratos</template>
+	</category>
+
+	<category>
+		<pattern>XIAOMI AMAZFIT PACE</pattern>
+		<template><think><set name="topic">*</set></think>Amazfit Pace è sicuramente un prodotto molto interessante sotto vari aspetti partendo dalla qualità costruttiva, passando per l'autonomia e finendo con l'hardware. È un prodotto nato per il mercato cinese e per "occidentalizzarlo" ci sono degli step, comunque non insormontabili. Per maggiori informazioni clicca sul seguente link: https://github.com/mao995/ttb/blob/master/sw/pace</template>
+	</category>
+
+	<category>
+		<pattern>SMARTWATCH</pattern>
+		<template><think><set name="topic">*</set></think>Se vuoi informazioni riguardo uno smartwatch, scrivi MODELLO seguito dal modello che ti interessa.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template><think><set name="topic">*</set></think>Questo modello non è disponibile.</template>
+	</category>
+</topic>
+</aiml>

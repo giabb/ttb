@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	
+	<category>
+		<pattern>SELEZIONA SOGG * PRED *</pattern>
+		<template>
+			<think>
+				<set var="ogg">
+					<select>
+						<q>
+							<subj><star index="1" /></subj>
+							<pred><star index="2" /></pred>
+							<obj>?ogg</obj>
+						</q>
+					</select>
+				</set>
+			</think>
+			<!--Valore in tuple: <get var="ogg" /> || -->
+			<condition var="ogg">		
+				<li value="[]"> Non è definito </li>
+				<li>
+				<!--Valore normalizzato:-->			
+				<get var="?ogg">
+					<tuple>
+						<get var="ogg" />
+					</tuple>
+				</get>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>SELEZIONA SOGG * OGG *</pattern>
+		<template>
+			<think>
+				<set var="pred">
+					<select>
+						<q>
+							<subj><star index="1" /></subj>
+							<pred>?pred</pred>
+							<obj><star index="2" /></obj>
+						</q>
+					</select>
+				</set>
+			</think>
+			<!--Valore in tuple: <get var="pred" /> || -->
+			<condition var="pred">		
+				<li value="[]"> Non è definito </li>
+				<li>
+				<!--Valore normalizzato:-->			
+				<get var="?pred">
+					<tuple>
+						<get var="pred" />
+					</tuple>
+				</get>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>SELEZIONA PRED * OGG *</pattern>
+		<template>
+			<think>
+				<set var="sogg">
+					<select>
+						<q>
+							<subj>?sogg</subj>
+							<pred><star index="1" /></pred>
+							<obj><star index="2" /></obj>
+						</q>
+					</select>
+				</set>
+			</think>
+			<!--Valore in tuple: <get var="sogg" /> || -->
+			<condition var="sogg">		
+				<li value="[]"> Non è definito </li>
+				<li>
+				<!--Valore normalizzato:-->			
+				<get var="?sogg">
+					<tuple>
+						<get var="sogg" />
+					</tuple>
+				</get>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>AGGIUNGI SOGG * PRED * OGG * </pattern>
+		<template>
+			<addtriple>
+				<subj><star index="1" /></subj>
+				<pred><star index="2" /></pred>
+				<obj><star index="3" /></obj>			
+			</addtriple>		
+			<!--Ho aggiunto la tripla.-->
+		</template>
+	</category>
+
+	<category>
+		<pattern>RIMUOVI SOGG * PRED * OGG * </pattern>
+		<template>
+			<deletetriple>
+				<subj><star index="1" /></subj>
+				<pred><star index="2" /></pred>
+				<obj><star index="3" /></obj>			
+			</deletetriple>		
+			<!--Ho rimosso la tripla.-->
+		</template>
+	</category>
+
+</aiml>

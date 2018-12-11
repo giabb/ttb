@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+		<pattern>^ CHE HO DETTO ^</pattern>
+		<template>Hai detto <request /></template>
+	</category>
+
+	<category>
+		<pattern>^ COSA HO DETTO ^</pattern>
+		<template><srai>CHE HO DETTO</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ PUOI RIPETERE ^</pattern>
+		<template>Ho detto <response index="2" /></template>
+	</category>
+
+	<category>
+		<pattern>^ NON HO CAPITO ^</pattern>
+		<template><srai>PUOI RIPETERE</srai></template>
+	</category>	
+
+	<category>
+		<pattern>^ COSA HAI DETTO ^</pattern>
+		<template><srai>PUOI RIPETERE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CHE HAI DETTO ^</pattern>
+		<template><srai>PUOI RIPETERE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ NON CREDO DI AVER CAPITO ^</pattern>
+		<template><srai>PUOI RIPETERE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CREDO DI NON AVER CAPITO ^</pattern>
+		<template><srai>PUOI RIPETERE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ CHE GIORNO È ^</pattern>
+		<template>Oggi è il <date format="%d %B %Y" /></template>
+	</category>
+
+	<category>
+		<pattern>^ GRAZIE ^</pattern>
+		<template>
+			<random>
+				<li>Prego.</li>
+				<li>Figurati!</li>
+				<li>Non c'è di che!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>$TOPICGET</pattern>
+		<template>il valore è <get name="topic"></get></template>
+	</category>
+
+	<category>
+		<pattern>$TOPICSET *</pattern>
+		<template><set name="topic"><uppercase><star /></uppercase></set></template>
+	</category>
+
+
+</aiml>

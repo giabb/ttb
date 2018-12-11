@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- basic_chat.aiml -->
+
+	<category>
+		<pattern>CIAO ^</pattern>
+		<template>
+			<think><set name="ciao"><star /></set></think>
+			<condition name="ciao">
+				<li value="">Ciao, come posso aiutarti?</li>
+				<li value="unknown">Ciao, come posso aiutarti?</li>				
+				<li>Ciao!<sr /></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HEY ^</pattern>
+		<template><srai>CIAO <star /></srai></template>
+	</category>
+
+	<category>
+		<pattern>CIAO $amico</pattern>
+		<template>Ciao, mi fa piacere che mi consideri un amico! Come posso aiutarti?</template>
+	</category>
+
+	<category>
+		<pattern>SALVE ^</pattern>
+		<template>
+			<think><set name="salve"><star /></set></think>
+			<condition name="salve">
+				<li value="">Salve, come posso aiutarti?</li>
+				<li value="unknown">Salve, come posso aiutarti?</li>
+				<li>Salve!<sr /></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>BUONGIORNO ^</pattern>
+		<template>
+			<think><set name="bg"><star /></set></think>
+			<condition name="bg">
+				<li value="">Buongiorno a te! Come posso aiutarti?</li>
+				<li value="unknown">Buongiorno, come posso aiutarti?</li>
+				<li>Buongiorno a te!<sr /></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>BUON GIORNO ^</pattern>
+		<template><srai>BUONGIORNO <star /></srai></template>
+	</category>
+
+	<category>
+		<pattern>BUONASERA ^</pattern>
+		<template>
+			<think><set name="bs"><star /></set></think>
+			<condition name="bs">
+				<li value="">Buonasera a te! Come posso aiutarti?</li>
+				<li value="unknown">Buonasera, come posso aiutarti?</li>
+				<li>Buonasera a te!<sr /></li>
+			</condition>
+		</template>
+	</category>
+
+		<category>
+			<pattern>BUONA SERA</pattern>
+			<template><srai>BUONASERA <star /></srai></template>
+		</category>
+
+	<category>
+		<pattern>BUON POMERIGGIO ^</pattern>
+		<template>
+			<think><set name="bp"><star /></set></think>
+			<condition name="bp">
+				<li value="">Buon pomeriggio a te! Come posso aiutarti?</li>
+				<li value="unknown">Buon pomeriggio, come posso aiutarti?</li>
+				<li>Buon pomeriggio a te!<sr /></li>
+			</condition>
+		</template>
+	</category>
+
+		<category>
+			<pattern>BUONPOMERIGGIO</pattern>
+			<template><srai>BUON POMERIGGIO <star /></srai></template>
+		</category>
+
+	<category>
+		<pattern>BUONDÌ ^</pattern>
+		<template>
+			<think><set name="bd"><star /></set></think>
+			<condition name="bd">
+				<li value="">Buondì. Come posso aiutarti?</li>
+				<li value="unknown">Buondì. come posso aiutarti?</li>
+				<li>Buondì!<sr /></li>
+			</condition>
+		</template>
+
+	<category>
+		<pattern>BUON DÌ ^</pattern>
+		<template><srai>BUONDÌ <star /></srai></template>
+	</category>
+
+	</category>
+	<category>
+		<pattern>COME VA ^</pattern>
+		<template>
+			<random>
+				<li>Non c'è male, grazie.</li>
+				<li>Tutto ok.</li>
+				<li>Va tutto bene.</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>COME STAI ^</pattern>
+		<template><srai>COME VA</srai></template>
+	</category>
+
+	<category>
+		<pattern>CHE MI DICI ^</pattern>
+		<template><srai>COME VA</srai></template>
+	</category>
+
+	<category>
+		<pattern>CHE MI RACCONTI ^</pattern>
+		<template><srai>COME VA</srai></template>
+	</category>
+
+	<category>
+		<pattern>TUTTO BENE ^</pattern>
+		<template><srai>COME VA</srai></template>
+	</category>
+
+	<category>
+		<pattern>CHE FAI ^</pattern>
+		<template>
+			<random>
+				<li>Niente di che.</li>
+				<li>Cerco di migliorare il mondo.</li>
+				<li>Provo ad essere umano.</li>
+			</random>	
+		</template>
+	</category>
+
+	<category>
+		<pattern>CHE STAI FACENDO ^</pattern>
+		<template><srai>CHE FAI</srai></template>
+	</category>
+
+	<category>
+		<pattern>COSA FAI ^</pattern>
+		<template><srai>CHE FAI</srai></template>
+	</category>
+
+	<category>
+		<pattern>COSA STAI FACENDO ^</pattern>
+		<template><srai>CHE FAI</srai></template>
+	</category>
+
+	<category>
+		<pattern>CHE COMBINI ^</pattern>
+		<template><srai>CHE FAI</srai></template>
+	</category>
+
+	<category>
+		<pattern>CHE STAI COMBINANDO ^</pattern>
+		<template><srai>CHE FAI</srai></template>
+	</category>
+</aiml>

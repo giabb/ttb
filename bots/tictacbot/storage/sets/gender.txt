@@ -1,0 +1,10 @@
+uomo
+donna
+maschio
+femmina
+ragazzo
+ragazza
+XX
+XY
+bambino
+bambina

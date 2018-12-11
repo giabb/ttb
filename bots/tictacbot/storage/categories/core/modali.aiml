@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+		<pattern>^ <set>modali</set> _ </pattern>
+		<template>Certo. <srai><star index="3" /></srai></template>
+	</category>
+
+</aiml>

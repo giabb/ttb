@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<category>
+		<pattern>^ EFFETTUARE UN ORDINE ^</pattern>
+		<template>
+			<think><set name="topic">NODE1</set></think>Digita il nome dello smartwatch che vuoi comprare. 
+			</template>
+	</category>
+
+	<category>
+		<pattern>^ FARE UN ORDINE ^</pattern>
+		<template><srai>EFFETTUARE UN ORDINE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ ORDINARE ^</pattern>
+		<template><srai>EFFETTUARE UN ORDINE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ COMPRARE ^</pattern>
+		<template><srai>EFFETTUARE UN ORDINE</srai></template>
+	</category>
+
+	<category>
+		<pattern>^ ACQUISTARE ^</pattern>
+		<template><srai>EFFETTUARE UN ORDINE</srai></template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="[$ANNULLA|$annulla|$Annulla]" /><regex pattern="[$ORDINE|$Ordine|$ordine]" /></pattern>
+		<template>
+			<condition name="topic">
+				<li value="*">Sembra che tu non abbia nessun ordine attivo. Scrivi "vorrei effettuare un ordine" per iniziare. </li>
+				<li><think><set name="topic">*</set></think>Come desideri. Ordine annullato.</li>
+			</condition>
+		</template>
+	</category>
+
+<topic name="NODE1">
+	<category>
+		<pattern>*</pattern>
+		<template><think><set name="topic">NODE2</set><set name="modello_ordine"><map><name>smartmap</name><star /></map></set></think><srai><get name="modello_ordine" /></srai></template>
+	</category>
+</topic>
+
+<topic name="NODE2">
+
+	<category>
+		<pattern><set>smartwatches</set></pattern>
+		<template>Il modello da te richiesto è <get name="modello_ordine" />, e costa <set name="prezzo_ordine"><srai>SELEZIONA SOGG <get name="modello_ordine" /> PRED prezzo</srai></set>€. Vuoi continuare?</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<condition name="modello_ordine">
+				<li value="">Il modello non è disponibile.<srai>EFFETTUARE UN ORDINE</srai></li>
+				<li>Il modello da te richiesto è <get name="modello_ordine" />. È corretto?</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">INIZIO ORDINE</set></think></template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template><srai>EFFETTUARE UN ORDINE</srai></template>
+	</category>
+
+</topic>
+
+<topic name="INIZIO ORDINE">
+	<category>
+		<pattern>#</pattern>
+		<template><think><set name="topic">CINTURINO</set></think>Il modello <get name="modello_ordine" /> è stato aggiunto al carrello. Digita il colore desiderato del cinturino. </template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Mi dispiace, ma quel modello non è disponibile. Scegli un altro modello. Se non hai più intenzione di effettuare l'ordine, scrivi ANNULLA ORDINE.</template>
+	</category>	
+</topic>
+
+<topic name="CINTURINO">
+	<category>
+		<pattern><set>colori</set></pattern>
+		<template><think><set name="topic">VETRINO</set></think>Ho aggiunto il cinturino di colore <set name="colore_ordine"><star /></set>. Vuoi anche un vetrino protettivo al prezzo di 10€?</template>
+	</category>
+	<category>
+		<pattern>*</pattern>
+		<template>Mi dispiace, ma quel colore non è disponibile. Scegli un altro colore. Se non hai più intenzione di effettuare l'ordine, scrivi ANNULLA ORDINE.</template>
+	</category>	
+</topic>
+
+<topic name="VETRINO">
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="vetrino_ordine">hai</set></think>Ho aggiunto il vetrino, il prezzo è di <set name="prezzo_ordine"><system>expr <get name="prezzo_ordine" /> + 10</system></set>€. Per continuare la procedura di acquisto, scrivi RIEPILOGO.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template><think><set name="vetrino_ordine">non hai</set></think>Non ho aggiunto il vetrino. Per continuare la procedura di acquisto, scrivi RIEPILOGO.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Ti ricordo che stai ancora decidendo il vetrino per il tuo ordine. Scrivi SÌ se vuoi un vetrino, scrivi NO in caso contrario. Scrivi RIEPILOGO per continuare l'ordine. Scrivi ANNULLA ORDINE se non hai più intenzione di effettuare l'ordine.</template>
+	</category>
+	
+	<category>
+		<pattern><regex pattern="[$RIEPILOGO|$Riepilogo|$riepilogo]" /></pattern>
+		<template><think><set name="topic">COGNOME</set></think>Stai acquistando il modello <get name="modello_ordine" /> con cinturino di colore <get name="colore_ordine" /> e <get name="vetrino_ordine" /> aggiunto il vetrino protettivo. La spedizione costa 10€, quindi il prezzo totale è di <set name="prezzo_ordine"><system>expr <get name="prezzo_ordine" /> + 10</system></set>€. Inserisci il tuo cognome per continuare. </template>
+	</category>
+</topic >
+
+<topic name="COGNOME">
+	<category>
+		<pattern>*</pattern>
+		<template>Il tuo cognome è <set name="cognome_ordine"><formal><star /></formal></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">NOME</set></think>Inserisci il tuo nome per continuare.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci il tuo cognome.</template>
+	</category>
+</topic>
+
+<topic name="NOME">
+	<category>
+		<pattern>*</pattern>
+		<template>Il tuo nome è <set name="nome_ordine"><formal><star /></formal></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">CITTÀ</set></think>Inserisci la città di consegna.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci il tuo nome.</template>
+	</category>
+</topic>
+
+<topic name="CITTÀ">
+	<category>
+		<pattern>*</pattern>
+		<template>La città di consegna è <set name="città_ordine"><formal><star /></formal></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">INDIRIZZO</set></think>Inserisci l'indirizzo di consegna, senza specificare il CAP.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci la città di consegna.</template>
+	</category>
+</topic>
+
+<topic name="INDIRIZZO">
+	<category>
+		<pattern><regex pattern="[VIA|VIALE|PIAZZA|PIAZZALE|STRADA|CONTRADA|TRAVERSA|CALLE|CORTE|RIO TERÀ|RIVA|FONDAMENTA|PONTE|RUGA|SALITA|CAMPO|PISCINA|SVINCOLO|LUNGOMARE|SESTIERE|QUARTIERE|RIVIERA]" /> * </pattern>
+		<template>Hai inserito <set name="indirizzo_ordine"><formal><star index="1" /><star index="2" /></formal></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">CAP</set></think>Perfetto. Inserisci ora il CAP.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci l'indirizzo di consegna, senza specificare il CAP.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>L'indirizzo inserito non è espresso nella forma corretta. Inserisci l'indirizzo di consegna per continuare. Non inserire abbreviazioni. Scrivi ANNULLA ORDINE se non hai più intenzione di effettuare l'ordine.</template>
+	</category>
+</topic>
+
+<topic name="CAP">
+	<category>
+		<pattern><regex pattern="^\d{5}$" /></pattern>
+		<template>Hai inserito <set name="cap_ordine"><star /></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">CELLULARE</set></think>Inserisci il tuo numero di cellulare, senza prefisso internazionale.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci il CAP.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Il CAP non è nella forma corretta. Ti ricordo che è composto da 5 numeri. Scrivi ANNULLA ORDINE se non hai più intenzione di effettuare l'ordine.</template>
+	</category>
+</topic>
+
+<topic name="CELLULARE">
+	<category>
+		<pattern><regex pattern="^\d{10}$" /></pattern>
+		<template>Il numero di cellulare inserito è <set name="cellulare_ordine"><star /></set>. È corretto?</template>
+	</category>
+
+	<category>
+		<pattern># SÌ #</pattern>
+		<template><think><set name="topic">NODE3</set></think>Perfetto. Lo smartwatch verrà spedito a <get name="cognome_ordine" /> <get name="nome_ordine" />, residente in <get name="città_ordine" /> presso <get name="indirizzo_ordine" />, <get name="cap_ordine" />. Il cellulare di contatto è <get name="cellulare_ordine" />. Scrivi RIEPILOGO per continuare. Scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+
+	<category>
+		<pattern># NO #</pattern>
+		<template>Inserisci il tuo numero di cellulare.</template>
+	</category>
+</topic>
+
+<topic name="NODE3">
+
+	<category>
+		<pattern><regex pattern="[$RIEPILOGO|$Riepilogo|$riepilogo]" /></pattern>
+		<template><think><set name="topic">PAGAMENTO</set></think>Stai acquistando il modello <get name="modello_ordine" /> con cinturino di colore <get name="colore_ordine" /> e <get name="vetrino_ordine" /> aggiunto il vetrino protettivo. Hai scelto come indirizzo di spedizione <get name="indirizzo_ordine" />, <get name="città_ordine" />, <get name="cap_ordine" />. Il nominativo di consegna è <get name="cognome_ordine" /> <get name="nome_ordine" />. Il tuo numero di cellulare di contatto è <get name="cellulare_ordine" />. Il prezzo totale è di <get name="prezzo_ordine" />€. Digita il numero della tua carta di credito per continuare (solo Visa o Mastercard), altrimenti scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Digita il numero della tua carta di credito per continuare (solo Visa o Mastercard), altrimenti scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+</topic>
+
+<topic name="PAGAMENTO">
+	<category>
+		<pattern><regex pattern="^5[1-5]\d{2}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$" /></pattern>
+		<template><think><set name="topic">FINALE</set><set name="carta_ordine"><star /></set></think>Hai scelto come pagamento una carta Mastercard. Scrivi CONFERMO per confermare l'ordine, altrimenti scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+
+	<category>
+		<pattern><regex pattern="^4\d{3}[\s-]?\d{4}[\s-]?\d{4}[\s-]?\d{4}$" /></pattern>
+		<template><think><set name="topic">FINALE</set><set name="carta_ordine"><star /></set></think>Hai scelto come pagamento una carta Visa. Scrivi CONFERMO per confermare l'ordine, altrimenti scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>La carta inserita non è valida. Ti ricordo che puoi inserire solo carte Visa o Mastercard. Se hai cambiato idea, scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+</topic>
+
+<topic name="FINALE">
+
+	<category>
+		<pattern><regex pattern="[$CONFERMO|$Confermo|$confermo]" /></pattern>
+		<template><think><set name="topic">*</set></think>Grazie per l'ordine. Abbiamo preso in carico la tua richiesta. Il tuo id ordine è 
+			<system>
+				./crea_ordine.py "<denormalize><get name="cognome_ordine" /></denormalize>" "<denormalize><get name="nome_ordine" /></denormalize>" "<denormalize><get name="modello_ordine" /></denormalize>" "<denormalize><get name="colore_ordine" /></denormalize>" "<denormalize><get name="vetrino_ordine" /></denormalize>" "<denormalize><get name="indirizzo_ordine" /></denormalize>" "<denormalize><get name="città_ordine" /></denormalize>" "<denormalize><get name="cap_ordine" /></denormalize>" "<denormalize><get name="cellulare_ordine" /></denormalize>" "<get name="prezzo_ordine" />" "<get name="carta_ordine" />"
+			</system>.
+		Non dimenticarlo!
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>Scrivi CONFERMO per confermare l'ordine, scrivi ANNULLA ORDINE per annullare l'ordine.</template>
+	</category>
+</topic>
+
+</aiml>

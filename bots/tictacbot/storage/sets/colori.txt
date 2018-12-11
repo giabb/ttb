@@ -1,0 +1,237 @@
+Acquamarina
+Albicocca
+Amaranto
+Ambra
+Ametista
+Anguria
+Antracite
+Aragosta
+Arancione
+Ardesia
+Argento
+Asparago
+Avio
+Avorio
+Azalea
+Azzurro
+Azzurro fiordaliso
+Beige oliva chiaro
+Beige verdastro
+Bianco
+Bianco antico
+Bianco anti-flash
+Bianco di titanio
+Bianco di zinco
+Bianco fantasma
+Bianco floreale
+Bianco fumo
+Bianco Navajo
+Biscotto
+Bistro
+Blu
+Blu acciaio
+Blu alice
+Blu Bondi
+Blu cadetto
+Blu ceruleo
+Blu comando stellare
+Blu di Persia
+Blu di Prussia
+Blu Dodger
+Blu elettrico
+Blu marino
+Blu medio
+Blu notte
+Blu oltremare
+Blu reale
+Blu scuro
+Bordeaux
+Borgogna
+Bronzo
+Bronzo antico
+Camoscio
+Carbone
+Cardo
+Carminio
+Carta da zucchero
+Castagno
+Castagno scuro
+Castagno chiaro
+Catrame
+Catrame scuro
+Celadon
+Celeste
+Ceruleo
+Ceruleo scuro
+Chartreuse
+Ciano
+Ciliegia
+Cioccolato
+Cobalto
+Conchiglia
+Corallo
+Crema
+Cremisi
+Denim
+Denim chiaro
+Eliotropo
+Écru
+Blu fiore di granturco
+Foglia di tè
+Fucsia
+Fucsia Bordesto Lillato
+Fulvo
+Gainsboro
+Giada
+Giallo
+Giallo miele
+Giallo Napoli
+Giallo pastello
+Giallo sabbia
+Giallo segnale
+Giallo scuolabus
+Glicine
+Granata
+Grano
+Grigio
+Grigio asparago
+Grigio ardesia scuro
+Grigio ardesia chiaro
+Grigio cenere
+Grigio rosso chiaro
+Grigio tè verde
+Grigio topo
+Incarnato prugna
+Indaco elettrico
+Indaco scuro
+International Klein Blue
+Isabella
+Cachi
+Kaki chiaro
+Kaki scuro
+Lampone
+Lavanda
+Lavanda pallido
+Lavanda rosata
+Limone
+Limone crema
+Lilla
+Lime
+Lino
+Magenta
+Magenta chiaro
+Magnolia
+Malva
+Malva chiaro
+Mandarino
+Marrone
+Marrone chiaro
+Marrone pastello
+Marrone-rosso
+Marrone sabbia chiaro
+Marrone scuro
+Melanzana
+Mogano
+Nero
+Ocra
+Olivina
+Orchidea
+Oro
+Oro vecchio
+Ottone antico
+Papaya
+Pera
+Pervinca
+Pesca
+Pesca scuro
+Pesca-arancio
+Pesca-giallo
+Pistacchio
+Platino
+Porpora
+Prugna
+Rame
+Registration black
+Rosa
+Rosa arancio
+Rosa medio
+Rosa Mountbatten
+Rosa pallido
+Rosa pastello
+Rosa scuro
+Rosa shocking
+Rosa vivo
+Rosso
+Rosso aragosta
+Rosso cardinale
+Rosso corsa
+Rosso Falun
+Rosso fragola
+Rosso fuoco
+Rosso mattone
+Rosso mattone chiaro
+Rosso pomodoro
+Rosso pompeiano
+Rosso rosa
+Rosso sangue
+Rosso segnale
+Rosso Tiziano
+Rosso veneziano
+Rosso violaceo
+Rosso violetto chiaro
+Rubino
+Sabbia
+Salmone
+Salmone scuro
+Sangria
+Scarlatto
+Scarlatto scuro
+Seppia
+Solidago
+Solidago scuro
+Tan
+Tenné
+Terra d'ombra
+Terra d'ombra bruciata
+Terra di Siena
+Terra di Siena bruciata
+Testa di moro
+Tè verde
+Tè verde scuro
+Tronco
+Turchese
+Turchese chiaro
+Turchese pallido
+Turchese scuro
+Turchese Perla Mistica
+Uovo di pettirosso
+Uovo di pettirosso chiaro
+Verde 
+Verde Caraibi
+Verde foresta
+Verde chiaro
+Verde-giallo
+Verde marino
+Verde marino medio
+Verde marino scuro
+Verde menta
+Verde menta chiaro
+Verde muschio
+Verde oliva
+Verde olivastro
+Verde oliva scuro
+Verde pastello
+Verde pino
+Verde primavera
+Verde primavera scuro
+Verde ufficio
+Verde smeraldo
+Verde Veronese
+Vermiglio
+Viola
+Viola chiaro
+Viola melanzana
+Vinaccia
+Zafferano
+Zafferano profondo
+Zaffiro
