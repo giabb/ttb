@@ -1,4 +1,4 @@
-# TicTacBot
+# TicTacBot - Bachelor Thesis in Computer Engineering
 
 1. Install ProgramY ```pip3 install programy```
 2. Copy the folder ```bots/tictacbot``` in ```/.local/lib/python3.6/site-packages/programy/```
