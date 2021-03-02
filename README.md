@@ -58,5 +58,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-- **Keith Sterling** - *AIML 2.0 Python interpeter* - [keiffster](https://github.com/keiffster)
+- **Keith Sterling** - *Developed AIML 2.0 Python interpeter* - [keiffster](https://github.com/keiffster)
 - **Billie Thompson** - *Provided README Template* - [PurpleBooth](https://github.com/PurpleBooth)
