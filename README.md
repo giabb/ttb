@@ -1,6 +1,6 @@
 # TicTacBot - AIML 2.0 bot in Python
 
-This project was developed as a support to my bachelor thesis supervised in 2018 by [Prof. Palmieri](https://www.mlsptlab-unicampania.it/people/faculty/francesco-a-n-palmieri.html). 
+This project was developed as a support to my bachelor thesis in Computer Engineering supervised in 2018 by [Prof. Palmieri](https://www.mlsptlab-unicampania.it/people/faculty/francesco-a-n-palmieri.html). 
 
 It is supposed to work only as a bot with [ProgramY](https://github.com/keiffster/program-y).
 
